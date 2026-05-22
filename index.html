@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Haseeb Vighio — CTO & Founder</title>
+  <meta name="description" content="Muhammad Haseeb Vighio — C-Suite Technology Executive, CTO at Eplanet Global, and founder of Kaamasaan, SaleOye, Sawary & LiveStreamTV." />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLC2FXZES1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BLC2FXZES1');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <style>
+
+/* ── TOKENS ─────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:     #07070f;
+  --bg2:    #0c0c18;
+  --card:   #111120;
+  --card2:  #16162a;
+  --border: rgba(255,255,255,.07);
+  --borderH:rgba(255,255,255,.14);
+  --text:   #eaebf4;
+  --text2:  #8890a8;
+  --text3:  #4e5268;
+  --indigo: #6366f1;
+  --indigoD:#4f52d4;
+  --isoft:  rgba(99,102,241,.10);
+  --imid:   rgba(99,102,241,.18);
+  --iglow:  rgba(99,102,241,.28);
+  --amber:  #f59e0b;
+  --asoft:  rgba(245,158,11,.10);
+  --amid:   rgba(245,158,11,.20);
+  --green:  #10b981;
+  --gsoft:  rgba(16,185,129,.10);
+  --gmid:   rgba(16,185,129,.18);
+  --rose:   #f43f5e;
+  --rsoft:  rgba(244,63,94,.10);
+  --sky:    #38bdf8;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);color:var(--text);
+  line-height:1.6;overflow-x:hidden;
+}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--indigo);border-radius:2px;}
+
+/* ── TYPE ───────────────────────────────── */
+.display{font-family:'Bricolage Grotesque',sans-serif;}
+
+/* ── NAV ────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  height:64px;padding:0 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(7,7,15,.75);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--border);
+  transition:background .3s;
+}
+nav.scrolled{background:rgba(7,7,15,.97);}
+.nav-logo{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1.25rem;font-weight:800;letter-spacing:-.02em;
+  color:var(--text);text-decoration:none;
+}
+.nav-logo .dot{color:var(--indigo);}
+.nav-links{display:flex;gap:30px;list-style:none;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.86rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-right{display:flex;align-items:center;gap:14px;}
+.avail-pill{
+  display:flex;align-items:center;gap:6px;
+  padding:5px 12px;border-radius:50px;
+  background:var(--gsoft);border:1px solid var(--gmid);
+  font-size:.72rem;font-weight:600;color:var(--green);
+}
+.avail-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+.nav-cta{
+  padding:9px 20px;border-radius:50px;
+  background:var(--indigo);color:#fff;
+  font-size:.84rem;font-weight:600;text-decoration:none;
+  transition:background .2s,transform .2s;
+  box-shadow:0 0 20px rgba(99,102,241,.25);
+}
+.nav-cta:hover{background:var(--indigoD);transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:1px;transition:all .3s;}
+
+/* ── DRAWER ─────────────────────────────── */
+.drawer{
+  display:none;position:fixed;inset:0;z-index:299;
+  background:rgba(7,7,15,.97);backdrop-filter:blur(24px);
+  flex-direction:column;align-items:center;justify-content:center;gap:36px;
+}
+.drawer.open{display:flex;}
+.drawer a{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:2rem;font-weight:700;color:var(--text);text-decoration:none;transition:color .2s;
+}
+.drawer a:hover{color:var(--indigo);}
+.drawer-x{position:absolute;top:20px;right:5%;font-size:2rem;cursor:pointer;color:var(--text3);background:none;border:none;}
+
+/* ── SHARED ─────────────────────────────── */
+.wrap{max-width:1160px;margin:0 auto;padding:0 5%;}
+section{padding:100px 0;}
+.label{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--indigo);margin-bottom:10px;}
+.h2{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;
+  line-height:1.12;letter-spacing:-.03em;color:var(--text);margin-bottom:14px;
+}
+.sub{font-size:.97rem;color:var(--text2);line-height:1.85;max-width:520px;}
+.itext{color:var(--indigo);}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.on{opacity:1;transform:none;}
+
+/* ── HERO ───────────────────────────────── */
+.hero{
+  position:relative;
+  padding:148px 0 108px;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% -5%, rgba(99,102,241,.13) 0%, transparent 70%),
+    var(--bg);
+}
+.hero::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:30px 30px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black 20%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black 20%,transparent 75%);
+}
+.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 5%;}
+
+.hero-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:6px 14px;border-radius:50px;
+  border:1px solid var(--imid);background:var(--isoft);
+  font-size:.75rem;font-weight:600;color:var(--indigo);
+  margin-bottom:30px;
+}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--indigo);animation:pulse 2s infinite;}
+
+.hero-name{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:clamp(3rem,7.5vw,6.8rem);
+  font-weight:800;line-height:1.01;letter-spacing:-.045em;
+  color:var(--text);margin-bottom:16px;
+}
+.hero-name em{
+  font-style:normal;
+  background:linear-gradient(135deg,#818cf8,#6366f1);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+.hero-title{
+  font-size:clamp(.95rem,1.8vw,1.15rem);color:var(--text2);
+  font-weight:400;margin-bottom:52px;letter-spacing:.01em;
+}
+.hero-sep{margin:0 12px;opacity:.25;}
+
+/* identity cards */
+.hero-ids{
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;
+  max-width:860px;margin-bottom:52px;
+}
+.idc{
+  padding:26px 28px;border-radius:16px;
+  background:var(--card);border:1px solid var(--border);
+  position:relative;overflow:hidden;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+}
+.idc::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;}
+.idc.exec::before{background:var(--indigo);}
+.idc.founder::before{background:var(--amber);}
+.idc:hover{border-color:var(--borderH);transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.4);}
+.idc-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.idc-icon{
+  width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;
+}
+.idc-icon.exec{background:var(--isoft);}
+.idc-icon.founder{background:var(--asoft);}
+.idc-badge{
+  font-size:.67rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  padding:3px 8px;border-radius:50px;
+}
+.badge-exec{background:var(--isoft);color:var(--indigo);}
+.badge-founder{background:var(--asoft);color:var(--amber);}
+.idc-role{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1.1rem;font-weight:700;color:var(--text);
+  letter-spacing:-.02em;margin-bottom:3px;
+}
+.idc-co{font-size:.82rem;color:var(--text2);margin-bottom:16px;}
+.idc-pills{display:flex;flex-wrap:wrap;gap:6px;}
+.idc-pill{
+  padding:3px 9px;border-radius:50px;font-size:.72rem;font-weight:500;
+  background:var(--bg2);border:1px solid var(--border);color:var(--text2);
+}
+.idc-ventures{display:flex;flex-direction:column;gap:7px;}
+.idc-v{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:500;color:var(--text2);}
+.idc-v-dot{width:4px;height:4px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+
+/* ctas */
+.hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.btn-p{
+  padding:13px 28px;border-radius:50px;background:var(--indigo);color:#fff;
+  font-size:.9rem;font-weight:600;text-decoration:none;
+  box-shadow:0 0 28px var(--iglow);
+  transition:background .2s,transform .2s,box-shadow .2s;
+}
+.btn-p:hover{background:var(--indigoD);transform:translateY(-2px);box-shadow:0 0 40px var(--iglow);}
+.btn-s{
+  padding:13px 28px;border-radius:50px;
+  background:transparent;color:var(--text);
+  font-size:.9rem;font-weight:600;text-decoration:none;
+  border:1px solid var(--border);
+  transition:border-color .2s,background .2s,transform .2s;
+}
+.btn-s:hover{border-color:var(--borderH);background:var(--card);transform:translateY(-2px);}
+.btn-t{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:.87rem;font-weight:600;color:var(--indigo);
+  text-decoration:none;transition:gap .2s;
+}
+.btn-t:hover{gap:9px;}
+
+/* ── STATS ──────────────────────────────── */
+.stats-row{
+  display:flex;flex-wrap:wrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:var(--bg2);
+}
+.sc{
+  flex:1;min-width:140px;
+  padding:28px 0;text-align:center;
+  border-right:1px solid var(--border);
+  transition:background .2s;
+}
+.sc:last-child{border-right:none;}
+.sc:hover{background:var(--card);}
+.sc-n{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:2.1rem;font-weight:800;line-height:1;
+  color:var(--indigo);
+}
+.sc-l{font-size:.74rem;color:var(--text2);margin-top:5px;font-weight:500;}
+
+/* ── ABOUT ──────────────────────────────── */
+#about{background:var(--bg);}
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:72px;align-items:start;}
+.about-body p{font-size:.97rem;color:var(--text2);line-height:1.95;margin-bottom:18px;}
+.about-body p:last-of-type{margin-bottom:30px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{
+  padding:6px 13px;border-radius:50px;
+  background:var(--card);border:1px solid var(--border);
+  font-size:.77rem;font-weight:500;color:var(--text2);
+  transition:border-color .2s,color .2s;
+}
+.chip:hover{border-color:var(--indigo);color:var(--indigo);}
+.sidebar{display:flex;flex-direction:column;gap:14px;}
+.scard{
+  padding:18px 20px;border-radius:14px;
+  background:var(--card);border:1px solid var(--border);
+  transition:border-color .2s;
+}
+.scard:hover{border-color:var(--borderH);}
+.scard-lbl{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:7px;}
+.scard-val{font-size:.9rem;font-weight:600;color:var(--text);}
+.scard-sub{font-size:.78rem;color:var(--text2);margin-top:2px;}
+.cert-list{display:flex;flex-direction:column;gap:7px;margin-top:4px;}
+.cert-item{display:flex;align-items:center;gap:7px;font-size:.82rem;color:var(--text2);}
+.cert-check{
+  width:17px;height:17px;border-radius:50%;flex-shrink:0;
+  background:var(--isoft);color:var(--indigo);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.55rem;font-weight:800;
+}
+
+/* ── CURRENT ROLE ───────────────────────── */
+#current-role{background:var(--bg2);}
+.role-card{border-radius:20px;overflow:hidden;border:1px solid var(--border);}
+.role-top{
+  padding:48px 52px;
+  background:linear-gradient(135deg,#4338ca 0%,#4f46e5 40%,#7c3aed 100%);
+  display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start;
+  position:relative;overflow:hidden;
+}
+.role-top::after{
+  content:'CTO';
+  position:absolute;right:-24px;top:50%;transform:translateY(-50%);
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:11rem;font-weight:800;letter-spacing:-.06em;
+  color:rgba(255,255,255,.05);line-height:1;pointer-events:none;
+}
+.rt-co{font-size:.8rem;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:8px;}
+.rt-title{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:2.4rem;font-weight:800;color:#fff;
+  letter-spacing:-.04em;line-height:1.08;margin-bottom:16px;
+}
+.rt-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 11px;border-radius:50px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  font-size:.72rem;font-weight:600;color:rgba(255,255,255,.9);margin-bottom:20px;
+}
+.rt-badge-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;}
+.rt-desc{font-size:.93rem;color:rgba(255,255,255,.7);line-height:1.82;max-width:520px;}
+.rt-period{font-size:.8rem;color:rgba(255,255,255,.45);white-space:nowrap;padding-top:4px;text-align:right;}
+.role-metrics{display:grid;grid-template-columns:repeat(4,1fr);}
+.rm{
+  padding:30px 28px;
+  border-right:1px solid var(--border);border-top:1px solid var(--border);
+  transition:background .2s;
+}
+.rm:last-child{border-right:none;}
+.rm:hover{background:var(--card);}
+.rm-n{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:2rem;font-weight:800;color:var(--indigo);line-height:1;margin-bottom:6px;
+}
+.rm-l{font-size:.8rem;color:var(--text2);line-height:1.5;}
+
+/* ── VENTURES ───────────────────────────── */
+#ventures{background:var(--bg);}
+.vg{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.vc{
+  text-decoration:none;color:inherit;display:flex;flex-direction:column;
+  border-radius:16px;background:var(--card);border:1px solid var(--border);
+  overflow:hidden;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+}
+.vc:hover{border-color:var(--borderH);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.5);}
+.vc-top{padding:26px 26px 20px;flex:1;}
+.vc-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;}
+.vc-icon{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+}
+.vc-live{
+  padding:3px 9px;border-radius:50px;
+  font-size:.67rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--gsoft);color:var(--green);border:1px solid var(--gmid);
+}
+.vc-name{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1.25rem;font-weight:700;color:var(--text);letter-spacing:-.02em;margin-bottom:5px;
+}
+.vc-url{font-size:.76rem;color:var(--text3);display:flex;align-items:center;gap:4px;margin-bottom:12px;}
+.vc-desc{font-size:.87rem;color:var(--text2);line-height:1.75;}
+.vc-bot{
+  padding:16px 26px;display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid var(--border);
+}
+.vc-pills{display:flex;flex-wrap:wrap;gap:6px;}
+.vc-pill{
+  padding:3px 8px;border-radius:50px;font-size:.7rem;font-weight:500;
+  background:var(--bg2);border:1px solid var(--border);color:var(--text2);
+}
+.vc-arr{font-size:.8rem;font-weight:700;transition:gap .2s;display:flex;align-items:center;gap:4px;white-space:nowrap;}
+.vc:hover .vc-arr{gap:8px;}
+
+/* ── EXPERIENCE ─────────────────────────── */
+#experience{background:var(--bg2);}
+.xwrap{max-width:820px;}
+.xi{
+  display:grid;grid-template-columns:150px 1fr;gap:28px;
+  padding-bottom:48px;position:relative;
+}
+.xi:not(:last-child)::after{
+  content:'';position:absolute;
+  left:150px;top:12px;bottom:0;
+  width:1px;background:var(--border);transform:translateX(-50%);
+}
+.xi:last-child{padding-bottom:0;}
+.xi-left{padding-top:3px;}
+.xi-date{font-size:.74rem;font-weight:600;color:var(--indigo);line-height:1.55;letter-spacing:.02em;}
+.xi-dot{
+  width:9px;height:9px;border-radius:50%;background:var(--indigo);
+  margin-top:10px;box-shadow:0 0 0 3px var(--isoft);
+}
+.xi-right{
+  padding-left:24px;
+  border-left:2px solid var(--isoft);
+}
+.xi-role{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1.08rem;font-weight:700;color:var(--text);
+  letter-spacing:-.02em;margin-bottom:2px;
+}
+.xi-org{font-size:.86rem;font-weight:600;color:var(--indigo);margin-bottom:12px;}
+.xi-ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.xi-ul li{
+  font-size:.86rem;color:var(--text2);line-height:1.78;
+  padding-left:14px;position:relative;
+}
+.xi-ul li::before{
+  content:'';position:absolute;left:0;top:9px;
+  width:4px;height:4px;border-radius:50%;background:var(--indigo);opacity:.6;
+}
+.xi-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.xi-tag{
+  padding:3px 8px;border-radius:50px;font-size:.7rem;font-weight:600;
+  background:var(--isoft);color:var(--indigo);border:1px solid var(--imid);
+}
+.earlier-box{
+  padding:22px;border-radius:14px;
+  background:var(--card);border:1px solid var(--border);
+}
+.earlier-box h4{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:.84rem;font-weight:700;color:var(--text);margin-bottom:14px;
+}
+.ei{
+  display:grid;grid-template-columns:1fr auto;gap:12px;
+  padding:9px 0;border-bottom:1px solid var(--border);align-items:start;
+}
+.ei:last-child{border-bottom:none;padding-bottom:0;}
+.ei-role{font-size:.83rem;font-weight:600;color:var(--text);}
+.ei-co{font-size:.76rem;color:var(--text2);margin-top:2px;}
+.ei-date{font-size:.72rem;color:var(--text3);white-space:nowrap;padding-top:2px;}
+
+/* ── STACK ──────────────────────────────── */
+#stack{background:var(--bg);}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.scc{
+  padding:24px;border-radius:14px;
+  background:var(--card);border:1px solid var(--border);
+  transition:border-color .25s,transform .25s;
+}
+.scc:hover{border-color:var(--borderH);transform:translateY(-3px);}
+.scc-icon{font-size:1.5rem;margin-bottom:11px;}
+.scc-name{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:.93rem;font-weight:700;color:var(--text);margin-bottom:13px;
+}
+.scc-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.scc-tag{
+  padding:3px 9px;border-radius:6px;font-size:.72rem;font-weight:500;
+  background:var(--bg2);border:1px solid var(--border);color:var(--text2);
+}
+
+/* ── BLOG ───────────────────────────────── */
+#blog{background:var(--bg2);}
+.blog-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;gap:20px;flex-wrap:wrap;}
+.all-link{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:.83rem;font-weight:600;color:var(--indigo);
+  text-decoration:none;transition:gap .2s;white-space:nowrap;
+}
+.all-link:hover{gap:9px;}
+/* featured */
+.feat{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-radius:18px;overflow:hidden;border:1px solid var(--border);
+  margin-bottom:20px;text-decoration:none;color:inherit;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+}
+.feat:hover{border-color:var(--borderH);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.5);}
+.feat-vis{
+  background:linear-gradient(135deg,#4338ca 0%,#7c3aed 100%);
+  padding:44px;display:flex;flex-direction:column;justify-content:flex-end;
+  position:relative;overflow:hidden;min-height:260px;
+}
+.feat-vis::before{
+  content:'"';position:absolute;top:-30px;left:20px;
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:14rem;font-weight:800;color:rgba(255,255,255,.06);line-height:1;
+}
+.feat-cat{
+  display:inline-block;padding:4px 10px;border-radius:50px;
+  font-size:.67rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  background:rgba(255,255,255,.14);color:rgba(255,255,255,.9);
+  border:1px solid rgba(255,255,255,.2);margin-bottom:12px;width:fit-content;
+}
+.feat-vis h3{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1.5rem;font-weight:800;color:#fff;
+  line-height:1.25;letter-spacing:-.03em;
+}
+.feat-body{
+  padding:36px 42px;background:var(--card);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.feat-sublabel{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;}
+.feat-title{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1.35rem;font-weight:800;color:var(--text);
+  letter-spacing:-.025em;line-height:1.25;margin-bottom:14px;
+}
+.feat-exc{font-size:.88rem;color:var(--text2);line-height:1.82;margin-bottom:24px;flex:1;}
+.feat-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.82rem;font-weight:700;color:var(--indigo);text-decoration:none;
+  transition:gap .2s;
+}
+.feat-cta:hover{gap:10px;}
+/* blog grid */
+.bg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.bc{
+  padding:22px;border-radius:14px;
+  background:var(--card);border:1px solid var(--border);
+  display:flex;flex-direction:column;gap:11px;
+  text-decoration:none;color:inherit;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+}
+.bc:hover{border-color:var(--borderH);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.4);}
+.bc-cat{
+  display:inline-block;padding:3px 9px;border-radius:50px;width:fit-content;
+  font-size:.66rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+}
+.cat-ai  {background:var(--isoft);color:var(--indigo);border:1px solid var(--imid);}
+.cat-cld {background:rgba(56,189,248,.10);color:var(--sky);border:1px solid rgba(56,189,248,.18);}
+.cat-ldr {background:var(--gsoft);color:var(--green);border:1px solid var(--gmid);}
+.cat-prd {background:var(--asoft);color:var(--amber);border:1px solid var(--amid);}
+.cat-str {background:var(--rsoft);color:var(--rose);border:1px solid rgba(244,63,94,.18);}
+.bc-title{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:.95rem;font-weight:700;color:var(--text);
+  line-height:1.35;letter-spacing:-.015em;flex:1;
+}
+.bc-foot{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.73rem;color:var(--text3);
+  padding-top:12px;border-top:1px solid var(--border);
+}
+.bc-read{color:var(--indigo);font-weight:600;}
+
+/* ── CONTACT ────────────────────────────── */
+#contact{background:var(--bg);text-align:center;}
+.contact-inner{max-width:660px;margin:0 auto;}
+.contact-inner p{font-size:.97rem;color:var(--text2);line-height:1.88;margin-bottom:44px;}
+.clinks{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.cl{
+  display:flex;align-items:center;gap:8px;
+  padding:11px 20px;border-radius:50px;
+  border:1px solid var(--border);background:var(--card);
+  color:var(--text);text-decoration:none;font-size:.85rem;font-weight:500;
+  transition:border-color .2s,transform .2s,color .2s;
+}
+.cl:hover{border-color:var(--indigo);color:var(--indigo);transform:translateY(-2px);}
+.cl svg{width:15px;height:15px;flex-shrink:0;}
+
+/* ── FOOTER ─────────────────────────────── */
+footer{
+  padding:26px 5%;text-align:center;
+  border-top:1px solid var(--border);background:var(--bg2);
+  color:var(--text3);font-size:.8rem;
+}
+footer a{color:var(--indigo);text-decoration:none;}
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media(max-width:1024px){
+  .role-metrics{grid-template-columns:1fr 1fr;}
+  .rm:nth-child(2){border-right:none;}
+  .rm:nth-child(3),.rm:nth-child(4){border-top:1px solid var(--border);}
+  .rm:nth-child(3){border-right:1px solid var(--border);}
+  .feat{grid-template-columns:1fr;}
+  .feat-vis{min-height:180px;}
+  .bg{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr;gap:40px;}
+  .vg{grid-template-columns:1fr;}
+  .sg{grid-template-columns:1fr 1fr;}
+  .nav-links,.nav-right{display:none;}
+  .hamburger{display:flex;}
+}
+@media(max-width:640px){
+  section{padding:72px 0;}
+  .hero{padding:100px 0 72px;}
+  .hero-ids{grid-template-columns:1fr;}
+  .sc{min-width:50%;border-bottom:1px solid var(--border);}
+  .sc:nth-child(even){border-right:none;}
+  .sc:nth-last-child(-n+2):not(:nth-child(odd)):last-child{border-bottom:none;}
+  .sg{grid-template-columns:1fr;}
+  .bg{grid-template-columns:1fr;}
+  .role-top{grid-template-columns:1fr;padding:32px 26px;}
+  .rt-period{text-align:left;}
+  .role-metrics{grid-template-columns:1fr 1fr;}
+  .rm:nth-child(2){border-right:1px solid var(--border);}
+  .rm:nth-child(3){border-right:none;}
+  .xwrap{max-width:100%;}
+  .xi{grid-template-columns:1fr;gap:8px;}
+  .xi:not(:last-child)::after{display:none;}
+  .xi-left{display:flex;align-items:center;gap:10px;}
+  .xi-dot{margin-top:0;}
+  .hero-ctas{flex-direction:column;align-items:flex-start;}
+  .clinks{flex-direction:column;align-items:stretch;}
+  .cl{justify-content:center;}
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Drawer -->
+<div class="drawer" id="drawer">
+  <button class="drawer-x" id="drawerX">&times;</button>
+  <a href="#about"      onclick="closeD()">About</a>
+  <a href="#ventures"   onclick="closeD()">Ventures</a>
+  <a href="#experience" onclick="closeD()">Experience</a>
+  <a href="#stack"      onclick="closeD()">Stack</a>
+  <a href="#blog"       onclick="closeD()">Insights</a>
+  <a href="#contact"    onclick="closeD()">Contact</a>
+</div>
+
+<!-- Nav -->
+<nav id="nav">
+  <a href="#" class="nav-logo">MH<span class="dot">V</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#blog">Insights</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="avail-pill">
+      <span class="avail-dot"></span>
+      Open to Opportunities
+    </div>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+  </div>
+  <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ── HERO ────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="hero-tag reveal">
+      <span class="hero-tag-dot"></span>
+      SAFe® · POPM® · CSM® · 12+ Years Enterprise Technology Leadership
+    </div>
+
+    <h1 class="hero-name reveal">
+      Muhammad<br><em>Haseeb</em> Vighio
+    </h1>
+
+    <p class="hero-title reveal">
+      C-Suite Technology Executive<span class="hero-sep">—</span>Pakistan · UAE · Worldwide
+    </p>
+
+    <div class="hero-ids reveal">
+
+      <div class="idc exec">
+        <div class="idc-top">
+          <div class="idc-icon exec">🏢</div>
+          <span class="idc-badge badge-exec">Executive</span>
+        </div>
+        <div class="idc-role">Chief Technology Officer</div>
+        <div class="idc-co">Eplanet Global · Feb 2025 – Present</div>
+        <div class="idc-pills">
+          <span class="idc-pill">90+ Engineers</span>
+          <span class="idc-pill">Enterprise ERP</span>
+          <span class="idc-pill">Agentic AI</span>
+          <span class="idc-pill">AWS · Azure</span>
+          <span class="idc-pill">12+ Years</span>
+        </div>
+      </div>
+
+      <div class="idc founder">
+        <div class="idc-top">
+          <div class="idc-icon founder">🚀</div>
+          <span class="idc-badge badge-founder">Entrepreneur</span>
+        </div>
+        <div class="idc-role">Serial Founder</div>
+        <div class="idc-co">4 Digital Ventures · Pakistan</div>
+        <div class="idc-ventures">
+          <div class="idc-v"><span class="idc-v-dot"></span>Kaamasaan.com — Services &amp; Jobs Platform</div>
+          <div class="idc-v"><span class="idc-v-dot"></span>SaleOye.pk — Digital Marketplace</div>
+          <div class="idc-v"><span class="idc-v-dot"></span>Sawary.pk — Verified Carpooling Network</div>
+          <div class="idc-v"><span class="idc-v-dot"></span>LiveStreamTV.pk — Sports &amp; Entertainment</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero-ctas reveal">
+      <a href="#experience" class="btn-p">View Experience</a>
+      <a href="#ventures" class="btn-s">Explore Ventures</a>
+      <a href="https://www.linkedin.com/in/m-haseeb-vighio/" target="_blank" rel="noopener" class="btn-t">LinkedIn Profile →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── STATS ─────────────────────────────── -->
+<div class="stats-row">
+  <div class="sc"><div class="sc-n" data-count="12" data-suffix="+">0</div><div class="sc-l">Years Experience</div></div>
+  <div class="sc"><div class="sc-n" data-count="90" data-suffix="+">0</div><div class="sc-l">Engineers Led</div></div>
+  <div class="sc"><div class="sc-n" data-count="4">0</div><div class="sc-l">Ventures Founded</div></div>
+  <div class="sc"><div class="sc-n" data-count="65" data-suffix="%">0</div><div class="sc-l">Faster Deployments</div></div>
+  <div class="sc"><div class="sc-n" data-count="99.95" data-suffix="%" data-dec="2">0</div><div class="sc-l">Uptime SLA</div></div>
+</div>
+
+<!-- ── ABOUT ──────────────────────────────── -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+
+      <div class="about-body reveal">
+        <p class="label">About</p>
+        <h2 class="h2">Executive. Builder.<br><span class="itext">Entrepreneur.</span></h2>
+        <p>
+          I'm a results-driven C-Suite technology executive with 12+ years of progressive leadership
+          across enterprise ERP, cloud infrastructure, and large-scale digital transformation.
+          Currently serving as CTO at Eplanet Global, I oversee a 90+ person engineering and product
+          organisation spanning HRMS, WMS, Financial ERP, VoIP, and AI-integrated SaaS platforms.
+        </p>
+        <p>
+          Previously, I led ecommerce and digital product initiatives at Habib Bank Limited (HBL) —
+          one of Pakistan's largest regulated financial institutions — delivering high-availability
+          digital banking infrastructure for HBL Konnect, serving millions of active users.
+          I bring board-level reporting capability, enterprise architecture depth, and a commercially
+          astute approach to technology investment.
+        </p>
+        <p>
+          Beyond the corporate world, I'm a serial entrepreneur and founder of four digital ventures —
+          each solving a distinct problem in Pakistan's growing digital economy, from verified
+          carpooling to live entertainment streaming.
+        </p>
+        <div class="chips">
+          <span class="chip">Enterprise ERP Leadership</span>
+          <span class="chip">Cloud &amp; DevOps</span>
+          <span class="chip">AI &amp; Automation</span>
+          <span class="chip">Digital Transformation</span>
+          <span class="chip">FinTech &amp; Regulated Environments</span>
+          <span class="chip">Board-Level Reporting</span>
+          <span class="chip">Cybersecurity &amp; Governance</span>
+          <span class="chip">Large-Scale Team Leadership</span>
+        </div>
+      </div>
+
+      <div class="sidebar reveal">
+        <div class="scard">
+          <div class="scard-lbl">Location</div>
+          <div class="scard-val">United Arab Emirates</div>
+          <div class="scard-sub">Open to Opportunities Worldwide</div>
+        </div>
+        <div class="scard">
+          <div class="scard-lbl">Contact</div>
+          <div class="scard-val"><a href="mailto:haseebleoo@gmail.com" style="color:var(--indigo);text-decoration:none;">haseebleoo@gmail.com</a></div>
+          <div class="scard-sub"><a href="tel:+923332759526" style="color:var(--text2);text-decoration:none;">+92 333 275 9526</a></div>
+        </div>
+        <div class="scard">
+          <div class="scard-lbl">Certifications</div>
+          <div class="cert-list">
+            <div class="cert-item"><div class="cert-check">✓</div>SAFe® — Scaled Agile Framework</div>
+            <div class="cert-item"><div class="cert-check">✓</div>POPM® — Product Owner / Manager</div>
+            <div class="cert-item"><div class="cert-check">✓</div>CSM® — Certified Scrum Master</div>
+            <div class="cert-item"><div class="cert-check">✓</div>Google Analytics Advanced</div>
+            <div class="cert-item"><div class="cert-check">✓</div>Fundamentals of HIPAA &amp; Privacy</div>
+          </div>
+        </div>
+        <div class="scard">
+          <div class="scard-lbl">Education</div>
+          <div class="scard-val">B.E. Computer System Engineering</div>
+          <div class="scard-sub">Mehran University of Engineering &amp; Technology · 2005–2009</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CURRENT ROLE ────────────────────────── -->
+<section id="current-role">
+  <div class="wrap">
+    <div class="sec-header reveal" style="margin-bottom:40px;">
+      <p class="label">Current Position</p>
+      <h2 class="h2">Leading at Scale</h2>
+    </div>
+    <div class="role-card reveal">
+      <div class="role-top">
+        <div>
+          <div class="rt-co">Eplanet Global · Pakistan (Remote-ready)</div>
+          <div class="rt-title">Chief Technology<br>Officer</div>
+          <div class="rt-badge">
+            <span class="rt-badge-dot"></span>
+            Currently Active · Feb 2025 – Present
+          </div>
+          <div class="rt-desc">
+            Accountable for enterprise technology vision, product architecture, and engineering
+            operations across a diversified SaaS and ERP portfolio. Report directly to the CEO
+            with full P&amp;L ownership of the technology function — leading 90+ professionals
+            spanning Software Engineering, DevOps, QA, Product, and Technical Support.
+          </div>
+        </div>
+        <div class="rt-period">Feb 2025 – Present</div>
+      </div>
+      <div class="role-metrics">
+        <div class="rm"><div class="rm-n">40%</div><div class="rm-l">Customer support reduction via Agentic AI initiative</div></div>
+        <div class="rm"><div class="rm-n">65%</div><div class="rm-l">Faster deployments via AWS/Azure CI/CD modernisation</div></div>
+        <div class="rm"><div class="rm-n">99.95%</div><div class="rm-l">Uptime SLA achieved post infrastructure overhaul</div></div>
+        <div class="rm"><div class="rm-n">50%</div><div class="rm-l">Faster time-to-market via microservices migration</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VENTURES ────────────────────────────── -->
+<section id="ventures">
+  <div class="wrap">
+    <div class="sec-header reveal" style="margin-bottom:48px;">
+      <p class="label">Portfolio</p>
+      <h2 class="h2">Ventures I've Built</h2>
+      <p class="sub">Four digital companies — each solving a distinct problem for Pakistan's growing digital economy.</p>
+    </div>
+    <div class="vg">
+
+      <a href="https://kaamasaan.com" target="_blank" rel="noopener" class="vc reveal">
+        <div class="vc-top" style="border-left:3px solid var(--amber);">
+          <div class="vc-head">
+            <div class="vc-icon" style="background:var(--asoft);">💼</div>
+            <span class="vc-live">Live</span>
+          </div>
+          <div class="vc-name">Kaamasaan</div>
+          <div class="vc-url">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            kaamasaan.com
+          </div>
+          <p class="vc-desc">Pakistan's services and opportunities platform, bridging talent with work. Empowering freelancers, businesses, and job seekers through a streamlined digital experience built for the local market.</p>
+        </div>
+        <div class="vc-bot">
+          <div class="vc-pills"><span class="vc-pill">Services</span><span class="vc-pill">Jobs &amp; Freelance</span><span class="vc-pill">Pakistan</span></div>
+          <span class="vc-arr" style="color:var(--amber);">Visit →</span>
+        </div>
+      </a>
+
+      <a href="https://saleoye.pk" target="_blank" rel="noopener" class="vc reveal">
+        <div class="vc-top" style="border-left:3px solid var(--green);">
+          <div class="vc-head">
+            <div class="vc-icon" style="background:var(--gsoft);">🛍️</div>
+            <span class="vc-live">Live</span>
+          </div>
+          <div class="vc-name">SaleOye</div>
+          <div class="vc-url">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            saleoye.pk
+          </div>
+          <p class="vc-desc">A dynamic digital marketplace connecting buyers and sellers across Pakistan. Simplifying commerce and bringing communities together through seamless online experiences tailored for the Pakistani market.</p>
+        </div>
+        <div class="vc-bot">
+          <div class="vc-pills"><span class="vc-pill">E-Commerce</span><span class="vc-pill">Marketplace</span><span class="vc-pill">Pakistan</span></div>
+          <span class="vc-arr" style="color:var(--green);">Visit →</span>
+        </div>
+      </a>
+
+      <a href="https://sawary.pk" target="_blank" rel="noopener" class="vc reveal">
+        <div class="vc-top" style="border-left:3px solid var(--indigo);">
+          <div class="vc-head">
+            <div class="vc-icon" style="background:var(--isoft);">🚗</div>
+            <span class="vc-live">Live</span>
+          </div>
+          <div class="vc-name">Sawary <span style="font-family:'DM Sans',sans-serif;font-weight:400;font-size:1rem;color:var(--text3);">سواری</span></div>
+          <div class="vc-url">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            sawary.pk
+          </div>
+          <p class="vc-desc">Pakistan's verified carpooling network for daily commuters. CNIC-verified riders, 100-metre precision route matching, and boarding OTP security — saving commuters thousands per month across major cities.</p>
+        </div>
+        <div class="vc-bot">
+          <div class="vc-pills"><span class="vc-pill">Mobility</span><span class="vc-pill">iOS &amp; Android</span><span class="vc-pill">Verified</span></div>
+          <span class="vc-arr" style="color:var(--indigo);">Visit →</span>
+        </div>
+      </a>
+
+      <a href="https://livestreamtv.pk" target="_blank" rel="noopener" class="vc reveal">
+        <div class="vc-top" style="border-left:3px solid var(--rose);">
+          <div class="vc-head">
+            <div class="vc-icon" style="background:var(--rsoft);">📺</div>
+            <span class="vc-live">Live</span>
+          </div>
+          <div class="vc-name">LiveStreamTV</div>
+          <div class="vc-url">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            livestreamtv.pk
+          </div>
+          <p class="vc-desc">Pakistan's ultimate destination for live sports scores, streaming guides, and entertainment news. Covering live cricket, football, Bollywood, Pakistani dramas, and international content — all in one place.</p>
+        </div>
+        <div class="vc-bot">
+          <div class="vc-pills"><span class="vc-pill">Media &amp; Entertainment</span><span class="vc-pill">Live Sports</span></div>
+          <span class="vc-arr" style="color:var(--rose);">Visit →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ────────────────────────── -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-header reveal" style="margin-bottom:56px;">
+      <p class="label">Career</p>
+      <h2 class="h2">Professional Journey</h2>
+      <p class="sub">12+ years of progressive leadership across enterprise technology, fintech, and digital commerce.</p>
+    </div>
+    <div class="xwrap">
+
+      <div class="xi reveal">
+        <div class="xi-left"><div class="xi-date">Feb 2025<br>Present</div><div class="xi-dot"></div></div>
+        <div class="xi-right">
+          <div class="xi-role">Chief Technology Officer</div>
+          <div class="xi-org">Eplanet Global</div>
+          <ul class="xi-ul">
+            <li>Lead a 90+ professional organisation spanning Software Engineering, DevOps, QA, Product, and Technical Support, implementing structured performance management and capability development frameworks.</li>
+            <li>Architect and oversee a multi-product ERP portfolio — HRMS, WMS, Financial ERP, VoIP, and AI-powered LiveChat — serving enterprise clients across multiple verticals.</li>
+            <li>Drove infrastructure modernisation across AWS and Azure, implementing CI/CD pipelines that reduced deployment cycles by 65% and improved system uptime to 99.95%.</li>
+            <li>Spearheaded Agentic AI initiative: embedded NLP-driven automation into core products, reducing customer support handling time by 40%.</li>
+            <li>Implemented microservices architecture across legacy monolith products, reducing time-to-market by 50%.</li>
+          </ul>
+          <div class="xi-tags"><span class="xi-tag">CTO</span><span class="xi-tag">ERP</span><span class="xi-tag">Agentic AI</span><span class="xi-tag">Cloud</span><span class="xi-tag">Microservices</span></div>
+        </div>
+      </div>
+
+      <div class="xi reveal">
+        <div class="xi-left"><div class="xi-date">Mar 2022<br>Feb 2025</div><div class="xi-dot"></div></div>
+        <div class="xi-right">
+          <div class="xi-role">Product Owner — eCommerce &amp; Digital Banking</div>
+          <div class="xi-org">HBL — Habib Bank Limited</div>
+          <ul class="xi-ul">
+            <li>Led end-to-end product ownership for HBL Konnect — Pakistan's branchless banking and digital wallet platform serving millions of active users in a high-availability regulated environment.</li>
+            <li>Managed a cross-functional engineering team of 20+ developers; achieved zero critical production incidents through rigorous change management and QA governance.</li>
+            <li>Applied Design Thinking to reduce digital onboarding time by 35% and increase mobile transaction volumes by 28% YoY.</li>
+            <li>Produced executive-level reporting and steering committee presentations for C-Suite and the Board Technology Committee.</li>
+          </ul>
+          <div class="xi-tags"><span class="xi-tag">FinTech</span><span class="xi-tag">Digital Banking</span><span class="xi-tag">Product Ownership</span><span class="xi-tag">Compliance</span></div>
+        </div>
+      </div>
+
+      <div class="xi reveal">
+        <div class="xi-left"><div class="xi-date">Jan 2021<br>Mar 2022</div><div class="xi-dot"></div></div>
+        <div class="xi-right">
+          <div class="xi-role">Senior Product Development Manager</div>
+          <div class="xi-org">Alkaram Studio</div>
+          <ul class="xi-ul">
+            <li>Oversaw end-to-end ecommerce operations for a leading national fashion retailer, managing platform performance, inventory systems, and digital sales strategy.</li>
+            <li>Implemented data-driven performance monitoring via advanced web analytics — improved conversion rate by 22% and reduced stockout incidents by 30%.</li>
+          </ul>
+          <div class="xi-tags"><span class="xi-tag">eCommerce</span><span class="xi-tag">Analytics</span><span class="xi-tag">Fashion Retail</span></div>
+        </div>
+      </div>
+
+      <div class="xi reveal">
+        <div class="xi-left"><div class="xi-date">Feb 2020<br>Feb 2021</div><div class="xi-dot"></div></div>
+        <div class="xi-right">
+          <div class="xi-role">Senior Manager — eCommerce</div>
+          <div class="xi-org">Khaadi SMC Pvt. Ltd.</div>
+          <ul class="xi-ul">
+            <li>Managed high-traffic multi-store platform sustaining 14,000+ concurrent users with full stability during peak campaigns.</li>
+            <li>Led strategic promotional planning contributing to 30% online revenue growth during festive seasons.</li>
+          </ul>
+          <div class="xi-tags"><span class="xi-tag">High-Traffic eCommerce</span><span class="xi-tag">Revenue Growth</span></div>
+        </div>
+      </div>
+
+      <div class="xi reveal">
+        <div class="xi-left"><div class="xi-date">2009<br>2020</div><div class="xi-dot"></div></div>
+        <div class="xi-right">
+          <div class="earlier-box">
+            <h4>Earlier Career (2009 – 2020)</h4>
+            <div class="ei"><div><div class="ei-role">Senior Product Manager — eCommerce</div><div class="ei-co">Alkaram Studio · Traffic +60%, Online Sales +40%</div></div><div class="ei-date">2018–2020</div></div>
+            <div class="ei"><div><div class="ei-role">Head of Product Development</div><div class="ei-co">Goto.com.pk · National ecommerce marketplace</div></div><div class="ei-date">2016–2018</div></div>
+            <div class="ei"><div><div class="ei-role">Technical Team Lead</div><div class="ei-co">ePlanet Communications Inc · Enterprise software delivery</div></div><div class="ei-date">2016–2018</div></div>
+            <div class="ei"><div><div class="ei-role">Senior Software Engineer</div><div class="ei-co">Folio3 Software · SaaS &amp; enterprise mobile platforms</div></div><div class="ei-date">2014–2016</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── STACK ──────────────────────────────── -->
+<section id="stack">
+  <div class="wrap">
+    <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto 56px;">
+      <p class="label">Technology</p>
+      <h2 class="h2">Tech Stack &amp; Platforms</h2>
+    </div>
+    <div class="sg">
+      <div class="scc reveal"><div class="scc-icon">☁️</div><div class="scc-name">Cloud &amp; Infrastructure</div><div class="scc-tags"><span class="scc-tag">AWS EC2 / S3 / RDS / Lambda</span><span class="scc-tag">Microsoft Azure</span><span class="scc-tag">Hybrid Cloud</span><span class="scc-tag">Docker</span><span class="scc-tag">Kubernetes</span><span class="scc-tag">Terraform</span><span class="scc-tag">CI/CD Pipelines</span></div></div>
+      <div class="scc reveal"><div class="scc-icon">🤖</div><div class="scc-name">AI &amp; Automation</div><div class="scc-tags"><span class="scc-tag">Agentic AI</span><span class="scc-tag">NLP</span><span class="scc-tag">LLM Integration</span><span class="scc-tag">ChatGPT / GPT-4</span><span class="scc-tag">Process Automation</span><span class="scc-tag">Intelligent Analytics</span></div></div>
+      <div class="scc reveal"><div class="scc-icon">🏗️</div><div class="scc-name">ERP &amp; Enterprise</div><div class="scc-tags"><span class="scc-tag">Custom HRMS</span><span class="scc-tag">WMS</span><span class="scc-tag">Financial ERP</span><span class="scc-tag">VoIP Platforms</span><span class="scc-tag">Microservices</span><span class="scc-tag">REST / GraphQL APIs</span></div></div>
+      <div class="scc reveal"><div class="scc-icon">🔒</div><div class="scc-name">Cybersecurity &amp; Governance</div><div class="scc-tags"><span class="scc-tag">RBAC</span><span class="scc-tag">Zero-Trust</span><span class="scc-tag">Multi-Tenant Security</span><span class="scc-tag">SIEM</span><span class="scc-tag">DR / BCP Planning</span><span class="scc-tag">Secure SDLC</span></div></div>
+      <div class="scc reveal"><div class="scc-icon">💻</div><div class="scc-name">Development</div><div class="scc-tags"><span class="scc-tag">Node.js</span><span class="scc-tag">React</span><span class="scc-tag">Python</span><span class="scc-tag">PHP</span><span class="scc-tag">MERN Stack</span><span class="scc-tag">PostgreSQL</span><span class="scc-tag">MongoDB</span><span class="scc-tag">Redis</span></div></div>
+      <div class="scc reveal"><div class="scc-icon">🔄</div><div class="scc-name">Methodologies</div><div class="scc-tags"><span class="scc-tag">SAFe® Agile</span><span class="scc-tag">Scrum</span><span class="scc-tag">POPM</span><span class="scc-tag">Design Thinking</span><span class="scc-tag">ITIL</span><span class="scc-tag">DevSecOps</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BLOG ───────────────────────────────── -->
+<section id="blog">
+  <div class="wrap">
+    <div class="blog-hd reveal">
+      <div>
+        <p class="label">Insights</p>
+        <h2 class="h2">Thoughts &amp; Perspectives</h2>
+        <p class="sub">Leadership, AI, digital transformation, and building in emerging markets — from LinkedIn.</p>
+      </div>
+      <a href="https://www.linkedin.com/in/m-haseeb-vighio/recent-activity/all/" target="_blank" rel="noopener" class="all-link">All posts on LinkedIn →</a>
+    </div>
+
+    <a href="https://www.linkedin.com/in/m-haseeb-vighio/" target="_blank" rel="noopener" class="feat reveal">
+      <div class="feat-vis">
+        <span class="feat-cat">AI &amp; Automation</span>
+        <h3>Why Agentic AI is the Next Frontier for Enterprise ERP</h3>
+      </div>
+      <div class="feat-body">
+        <div class="feat-sublabel">Featured Insight · LinkedIn</div>
+        <div class="feat-title">Building an Agentic AI Platform that Reduced Support Workload by 40%</div>
+        <p class="feat-exc">Most enterprise software still reacts to commands. Agentic AI changes that — it reasons, plans, and executes complex workflows autonomously. At Eplanet Global, we designed and deployed an enterprise AI assistant with NLP, intelligent automation, and deep system integrations. Here's what we built, what worked, and what didn't.</p>
+        <span class="feat-cta">Read on LinkedIn →</span>
+      </div>
+    </a>
+
+    <div class="bg">
+      <a href="https://www.linkedin.com/in/m-haseeb-vighio/" target="_blank" rel="noopener" class="bc reveal">
+        <span class="bc-cat cat-cld">Cloud &amp; DevOps</span>
+        <div class="bc-title">From Monolith to Microservices: A CTO's Playbook for Zero-Downtime Migration</div>
+        <div class="bc-foot"><span>LinkedIn Insight</span><span class="bc-read">Read →</span></div>
+      </a>
+      <a href="https://www.linkedin.com/in/m-haseeb-vighio/" target="_blank" rel="noopener" class="bc reveal">
+        <span class="bc-cat cat-ldr">Leadership</span>
+        <div class="bc-title">What Managing 90+ Engineers Taught Me About Trust, Autonomy &amp; Scale</div>
+        <div class="bc-foot"><span>LinkedIn Insight</span><span class="bc-read">Read →</span></div>
+      </a>
+      <a href="https://www.linkedin.com/in/m-haseeb-vighio/" target="_blank" rel="noopener" class="bc reveal">
+        <span class="bc-cat cat-prd">Product</span>
+        <div class="bc-title">Delivering HBL Konnect: Digital Banking for Millions Under Regulatory Constraints</div>
+        <div class="bc-foot"><span>LinkedIn Insight</span><span class="bc-read">Read →</span></div>
+      </a>
+      <a href="https://www.linkedin.com/in/m-haseeb-vighio/" target="_blank" rel="noopener" class="bc reveal">
+        <span class="bc-cat cat-str">Entrepreneurship</span>
+        <div class="bc-title">Four Startups in Pakistan: What I'd Tell My Younger Self Before Founding Each One</div>
+        <div class="bc-foot"><span>LinkedIn Insight</span><span class="bc-read">Read →</span></div>
+      </a>
+      <a href="https://www.linkedin.com/in/m-haseeb-vighio/" target="_blank" rel="noopener" class="bc reveal">
+        <span class="bc-cat cat-cld">Cloud Strategy</span>
+        <div class="bc-title">AWS + Azure Hybrid: Why We Chose Both and the Architecture Lessons That Followed</div>
+        <div class="bc-foot"><span>LinkedIn Insight</span><span class="bc-read">Read →</span></div>
+      </a>
+      <a href="https://www.linkedin.com/in/m-haseeb-vighio/" target="_blank" rel="noopener" class="bc reveal">
+        <span class="bc-cat cat-ai">AI &amp; Security</span>
+        <div class="bc-title">Cybersecurity Governance in Multi-Tenant SaaS: Building Enterprise Trust at Scale</div>
+        <div class="bc-foot"><span>LinkedIn Insight</span><span class="bc-read">Read →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────── -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-inner reveal">
+      <p class="label" style="text-align:center;">Let's Connect</p>
+      <h2 class="h2" style="text-align:center;margin-bottom:16px;">Open to the right<br><span class="itext">opportunity.</span></h2>
+      <p>Whether you're looking for a technology leader for an enterprise transformation, exploring a co-founder conversation, or want to discuss the future of AI-driven platforms — I'm always open to meaningful dialogue.</p>
+      <div class="clinks">
+        <a href="https://www.linkedin.com/in/m-haseeb-vighio/" target="_blank" rel="noopener" class="cl">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:haseebleoo@gmail.com" class="cl">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          haseebleoo@gmail.com
+        </a>
+        <a href="tel:+923332759526" class="cl">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.05 6.05l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +92 333 275 9526
+        </a>
+        <a href="https://kaamasaan.com" target="_blank" rel="noopener" class="cl">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          kaamasaan.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────── -->
+<footer>
+  <p>&copy; 2026 <a href="#">Muhammad Haseeb Vighio</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/m-haseeb-vighio/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; Pakistan · UAE · Worldwide</p>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30));
+
+// Drawer
+document.getElementById('ham').onclick = () => {
+  document.getElementById('drawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+document.getElementById('drawerX').onclick = closeD;
+function closeD() {
+  document.getElementById('drawer').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Scroll reveal
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('on'), i * 55);
+      ro.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Counters
+function runCount(el) {
+  const target = parseFloat(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const dec    = parseInt(el.dataset.dec || '0', 10);
+  const dur    = 1500;
+  const t0     = performance.now();
+  (function tick(now) {
+    const p = Math.min((now - t0) / dur, 1);
+    const v = (1 - Math.pow(1 - p, 3)) * target;
+    el.textContent = v.toFixed(dec) + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  })(t0);
+}
+const co = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { runCount(e.target); co.unobserve(e.target); } });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => co.observe(el));
+
+// Venture tilt
+document.querySelectorAll('.vc').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    card.style.transform = `translateY(-5px) rotateX(${-y*4}deg) rotateY(${x*4}deg)`;
+  });
+  card.addEventListener('mouseleave', () => card.style.transform = '');
+});
+</script>
+</body>
+</html>
