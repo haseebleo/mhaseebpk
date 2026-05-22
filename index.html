@@ -323,26 +323,26 @@ section{padding:100px 0;}
 
 /* ── ABOUT ──────────────────────────────── */
 #about{background:var(--bg);}
-.about-grid{display:grid;grid-template-columns:300px 1fr 280px;gap:52px;align-items:start;}
-.about-photo-wrap{position:relative;}
+/* top row: photo + bio */
+.about-top{display:grid;grid-template-columns:320px 1fr;gap:60px;align-items:start;margin-bottom:52px;}
+/* photo */
+.about-photo-wrap{position:relative;flex-shrink:0;}
 .about-photo{
-  width:100%;aspect-ratio:1/1.1;object-fit:cover;object-position:top center;
-  border-radius:18px;border:1px solid var(--border);
-  display:block;
-  filter:grayscale(10%);
-  transition:filter .3s;
+  width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;
+  border-radius:20px;border:1px solid var(--border);
+  display:block;filter:grayscale(8%);transition:filter .4s;
 }
 .about-photo:hover{filter:grayscale(0%);}
 .photo-badge{
-  position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);
-  white-space:nowrap;
-  padding:8px 16px;border-radius:50px;
-  background:var(--card2);border:1px solid var(--border);
+  position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);
+  white-space:nowrap;padding:9px 18px;border-radius:50px;
+  background:var(--card2);border:1px solid var(--borderH);
   font-size:.74rem;font-weight:600;color:var(--text2);
   display:flex;align-items:center;gap:7px;
-  box-shadow:0 8px 24px rgba(0,0,0,.4);
+  box-shadow:0 8px 28px rgba(0,0,0,.5);
 }
-.photo-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);}
+.photo-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 7px var(--green);animation:pulse 2s infinite;}
+/* bio */
 .about-body p{font-size:.97rem;color:var(--text2);line-height:1.95;margin-bottom:18px;}
 .about-body p:last-of-type{margin-bottom:30px;}
 .chips{display:flex;flex-wrap:wrap;gap:8px;}
@@ -353,16 +353,25 @@ section{padding:100px 0;}
   transition:border-color .2s,color .2s;
 }
 .chip:hover{border-color:var(--indigo);color:var(--indigo);}
-.sidebar{display:flex;flex-direction:column;gap:14px;}
+/* info cards — horizontal row below */
+.about-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
 .scard{
-  padding:18px 20px;border-radius:14px;
+  padding:20px 22px;border-radius:14px;
   background:var(--card);border:1px solid var(--border);
-  transition:border-color .2s;
+  transition:border-color .2s,transform .2s;
 }
-.scard:hover{border-color:var(--borderH);}
-.scard-lbl{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:7px;}
-.scard-val{font-size:.9rem;font-weight:600;color:var(--text);}
-.scard-sub{font-size:.78rem;color:var(--text2);margin-top:2px;}
+.scard:hover{border-color:var(--borderH);transform:translateY(-3px);}
+.scard-lbl{font-size:.67rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;}
+.scard-val{font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:2px;}
+.scard-sub{font-size:.77rem;color:var(--text2);line-height:1.5;}
+.cert-list{display:flex;flex-direction:column;gap:6px;margin-top:2px;}
+.cert-item{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text2);}
+.cert-check{
+  width:15px;height:15px;border-radius:50%;flex-shrink:0;
+  background:var(--isoft);color:var(--indigo);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.52rem;font-weight:800;
+}
 .cert-list{display:flex;flex-direction:column;gap:7px;margin-top:4px;}
 .cert-item{display:flex;align-items:center;gap:7px;font-size:.82rem;color:var(--text2);}
 .cert-check{
@@ -839,15 +848,15 @@ footer a{color:var(--indigo);text-decoration:none;}
 <!-- ── ABOUT ──────────────────────────────── -->
 <section id="about">
   <div class="wrap">
-    <div class="about-grid">
+    <!-- Top row: photo + bio -->
+    <div class="about-top">
 
-      <!-- Photo -->
       <div class="about-photo-wrap reveal">
         <img
           src="haseeb.jpg"
           alt="Muhammad Haseeb Vighio — Agentic AI Expert, CTO and Technical Consultant"
           class="about-photo"
-          width="300"
+          width="320"
           loading="eager"
         />
         <div class="photo-badge">
@@ -879,43 +888,50 @@ footer a{color:var(--indigo);text-decoration:none;}
           from verified carpooling to live sports entertainment streaming.
         </p>
         <div class="chips">
-          <span class="chip">Enterprise ERP Leadership</span>
+          <span class="chip">Agentic AI</span>
+          <span class="chip">NLP &amp; Language AI</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">Technical Consultancy</span>
+          <span class="chip">Enterprise ERP</span>
           <span class="chip">Cloud &amp; DevOps</span>
-          <span class="chip">AI &amp; Automation</span>
           <span class="chip">Digital Transformation</span>
           <span class="chip">FinTech &amp; Regulated Environments</span>
-          <span class="chip">Board-Level Reporting</span>
           <span class="chip">Cybersecurity &amp; Governance</span>
           <span class="chip">Large-Scale Team Leadership</span>
         </div>
       </div>
 
-      <div class="sidebar reveal">
-        <div class="scard">
-          <div class="scard-lbl">Location</div>
-          <div class="scard-val">United Arab Emirates</div>
-          <div class="scard-sub">Open to Opportunities Worldwide</div>
+    </div>
+
+    <!-- Bottom row: info cards -->
+    <div class="about-cards">
+
+      <div class="scard reveal">
+        <div class="scard-lbl">Location</div>
+        <div class="scard-val">United Arab Emirates</div>
+        <div class="scard-sub">Open to Opportunities Worldwide</div>
+      </div>
+
+      <div class="scard reveal">
+        <div class="scard-lbl">Contact</div>
+        <div class="scard-val"><a href="mailto:haseebleoo@gmail.com" style="color:var(--indigo);text-decoration:none;">haseebleoo@gmail.com</a></div>
+        <div class="scard-sub"><a href="tel:+923332759526" style="color:var(--text2);text-decoration:none;">+92 333 275 9526</a></div>
+      </div>
+
+      <div class="scard reveal">
+        <div class="scard-lbl">Certifications</div>
+        <div class="cert-list">
+          <div class="cert-item"><div class="cert-check">✓</div>SAFe® — Scaled Agile Framework</div>
+          <div class="cert-item"><div class="cert-check">✓</div>POPM® — Product Owner / Manager</div>
+          <div class="cert-item"><div class="cert-check">✓</div>CSM® — Certified Scrum Master</div>
+          <div class="cert-item"><div class="cert-check">✓</div>Google Analytics Advanced</div>
         </div>
-        <div class="scard">
-          <div class="scard-lbl">Contact</div>
-          <div class="scard-val"><a href="mailto:haseebleoo@gmail.com" style="color:var(--indigo);text-decoration:none;">haseebleoo@gmail.com</a></div>
-          <div class="scard-sub"><a href="tel:+923332759526" style="color:var(--text2);text-decoration:none;">+92 333 275 9526</a></div>
-        </div>
-        <div class="scard">
-          <div class="scard-lbl">Certifications</div>
-          <div class="cert-list">
-            <div class="cert-item"><div class="cert-check">✓</div>SAFe® — Scaled Agile Framework</div>
-            <div class="cert-item"><div class="cert-check">✓</div>POPM® — Product Owner / Manager</div>
-            <div class="cert-item"><div class="cert-check">✓</div>CSM® — Certified Scrum Master</div>
-            <div class="cert-item"><div class="cert-check">✓</div>Google Analytics Advanced</div>
-            <div class="cert-item"><div class="cert-check">✓</div>Fundamentals of HIPAA &amp; Privacy</div>
-          </div>
-        </div>
-        <div class="scard">
-          <div class="scard-lbl">Education</div>
-          <div class="scard-val">B.E. Computer System Engineering</div>
-          <div class="scard-sub">Mehran University of Engineering &amp; Technology · 2005–2009</div>
-        </div>
+      </div>
+
+      <div class="scard reveal">
+        <div class="scard-lbl">Education</div>
+        <div class="scard-val">B.E. Computer System Engineering</div>
+        <div class="scard-sub">Mehran University of Engineering &amp; Technology · 2005–2009</div>
       </div>
 
     </div>
