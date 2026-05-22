@@ -33,6 +33,7 @@
     "@type": "Person",
     "name": "Muhammad Haseeb Vighio",
     "url": "https://mhaseeb.pk",
+    "image": "https://mhaseeb.pk/haseeb.jpg",
     "sameAs": [
       "https://www.linkedin.com/in/m-haseeb-vighio/"
     ],
@@ -322,7 +323,26 @@ section{padding:100px 0;}
 
 /* ── ABOUT ──────────────────────────────── */
 #about{background:var(--bg);}
-.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:72px;align-items:start;}
+.about-grid{display:grid;grid-template-columns:300px 1fr 280px;gap:52px;align-items:start;}
+.about-photo-wrap{position:relative;}
+.about-photo{
+  width:100%;aspect-ratio:1/1.1;object-fit:cover;object-position:top center;
+  border-radius:18px;border:1px solid var(--border);
+  display:block;
+  filter:grayscale(10%);
+  transition:filter .3s;
+}
+.about-photo:hover{filter:grayscale(0%);}
+.photo-badge{
+  position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);
+  white-space:nowrap;
+  padding:8px 16px;border-radius:50px;
+  background:var(--card2);border:1px solid var(--border);
+  font-size:.74rem;font-weight:600;color:var(--text2);
+  display:flex;align-items:center;gap:7px;
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
+}
+.photo-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);}
 .about-body p{font-size:.97rem;color:var(--text2);line-height:1.95;margin-bottom:18px;}
 .about-body p:last-of-type{margin-bottom:30px;}
 .chips{display:flex;flex-wrap:wrap;gap:8px;}
@@ -635,8 +655,14 @@ footer a{color:var(--indigo);text-decoration:none;}
   .feat-vis{min-height:180px;}
   .bg{grid-template-columns:1fr 1fr;}
 }
+@media(max-width:1100px){
+  .about-grid{grid-template-columns:240px 1fr;gap:40px;}
+  .about-grid .sidebar{grid-column:1/-1;}
+}
 @media(max-width:900px){
   .about-grid{grid-template-columns:1fr;gap:40px;}
+  .about-photo{max-width:260px;aspect-ratio:1/1.1;}
+  .about-photo-wrap{text-align:center;display:flex;flex-direction:column;align-items:center;}
   .vg{grid-template-columns:1fr;}
   .sg{grid-template-columns:1fr 1fr;}
   .nav-links,.nav-right{display:none;}
@@ -814,6 +840,21 @@ footer a{color:var(--indigo);text-decoration:none;}
 <section id="about">
   <div class="wrap">
     <div class="about-grid">
+
+      <!-- Photo -->
+      <div class="about-photo-wrap reveal">
+        <img
+          src="haseeb.jpg"
+          alt="Muhammad Haseeb Vighio — Agentic AI Expert, CTO and Technical Consultant"
+          class="about-photo"
+          width="300"
+          loading="eager"
+        />
+        <div class="photo-badge">
+          <span class="photo-badge-dot"></span>
+          CTO · Eplanet Global
+        </div>
+      </div>
 
       <div class="about-body reveal">
         <p class="label">About</p>
