@@ -176,7 +176,7 @@ nav.scrolled{background:rgba(7,7,15,.97);}
 .drawer-x{position:absolute;top:20px;right:5%;font-size:2rem;cursor:pointer;color:var(--text3);background:none;border:none;}
 
 /* ── SHARED ─────────────────────────────── */
-.wrap{max-width:1160px;margin:0 auto;padding:0 5%;}
+.wrap{max-width:1280px;margin:0 auto;padding:0 5%;}
 section{padding:100px 0;}
 .label{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--indigo);margin-bottom:10px;}
 .h2{
@@ -205,7 +205,7 @@ section{padding:100px 0;}
   mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black 20%,transparent 75%);
   -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black 20%,transparent 75%);
 }
-.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 5%;}
+.hero-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:0 5%;}
 
 .hero-tag{
   display:inline-flex;align-items:center;gap:7px;
@@ -237,7 +237,7 @@ section{padding:100px 0;}
 /* identity cards */
 .hero-ids{
   display:grid;grid-template-columns:1fr 1fr;gap:18px;
-  max-width:860px;margin-bottom:52px;
+  max-width:920px;margin-bottom:52px;
 }
 .idc{
   padding:26px 28px;border-radius:16px;
@@ -654,7 +654,15 @@ footer{
 }
 footer a{color:var(--indigo);text-decoration:none;}
 
+/* ── AI EXPERTISE GRID ──────────────────── */
+.ai-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+
 /* ── RESPONSIVE ─────────────────────────── */
+@media(max-width:1100px){
+  .about-top{grid-template-columns:240px 1fr;gap:40px;}
+  .about-cards{grid-template-columns:1fr 1fr;}
+  .ai-grid{grid-template-columns:1fr 1fr;}
+}
 @media(max-width:1024px){
   .role-metrics{grid-template-columns:1fr 1fr;}
   .rm:nth-child(2){border-right:none;}
@@ -664,14 +672,9 @@ footer a{color:var(--indigo);text-decoration:none;}
   .feat-vis{min-height:180px;}
   .bg{grid-template-columns:1fr 1fr;}
 }
-@media(max-width:1100px){
-  .about-grid{grid-template-columns:240px 1fr;gap:40px;}
-  .about-grid .sidebar{grid-column:1/-1;}
-}
 @media(max-width:900px){
-  .about-grid{grid-template-columns:1fr;gap:40px;}
-  .about-photo{max-width:260px;aspect-ratio:1/1.1;}
-  .about-photo-wrap{text-align:center;display:flex;flex-direction:column;align-items:center;}
+  .about-top{grid-template-columns:1fr;}
+  .about-photo-wrap{max-width:260px;width:100%;margin:0 auto 48px;}
   .vg{grid-template-columns:1fr;}
   .sg{grid-template-columns:1fr 1fr;}
   .nav-links,.nav-right{display:none;}
@@ -681,6 +684,9 @@ footer a{color:var(--indigo);text-decoration:none;}
   section{padding:72px 0;}
   .hero{padding:100px 0 72px;}
   .hero-ids{grid-template-columns:1fr;}
+  .about-top{gap:24px;}
+  .about-cards{grid-template-columns:1fr;}
+  .ai-grid{grid-template-columns:1fr;}
   .sc{min-width:50%;border-bottom:1px solid var(--border);}
   .sc:nth-child(even){border-right:none;}
   .sc:nth-last-child(-n+2):not(:nth-child(odd)):last-child{border-bottom:none;}
@@ -815,7 +821,7 @@ footer a{color:var(--indigo);text-decoration:none;}
       <h2 class="h2">Agentic AI &amp; Technical Consultancy</h2>
       <p class="sub" style="margin:0 auto;">Helping enterprises move beyond static software — into AI systems that reason, plan, and act.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+    <div class="ai-grid">
 
       <article style="padding:28px 24px;border-radius:14px;background:var(--card);border:1px solid var(--border);transition:border-color .25s,transform .25s;" onmouseover="this.style.borderColor='var(--borderH)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform=''">
         <div style="font-size:1.8rem;margin-bottom:14px;">🤖</div>
